@@ -107,7 +107,9 @@ class Payyan:
                     unicode_letter = self.rulesDict[letter]
                     if(self.isPrebase(unicode_letter)):
                         #print (unicode_letter +" is prebase").encode('utf-8')
-                        prebase_letter = unicode_letter
+                        # If there are multiple prebase characters, add them at the end.
+                        # For Eg: ആന്‍ഡ്രോയ്ഡ്. ്രേ
+                        prebase_letter = unicode_letter + prebase_letter
                         
                     else:
                         post_index = index+charNo
